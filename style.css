@@ -11,7 +11,7 @@ body {
 }
 
 .game {
-	background-image: url(./garage.jpg);
+	background-image: url(./img/garage.jpg);
 	height: 90vh;
 	background-size: cover;
 	background-position: center;
@@ -21,50 +21,50 @@ body {
 	align-items: flex-end;
 }
 
-.spoiler-btn {
-	width: 270px;
-	height: 50px;
-	border: 2px solid #2a2a2a;
-	border-radius: 10px;
-	position: absolute;
-	text-align: center;
-	padding: 7px;
-	left: 50px;
-	top: 150px;
-	cursor: pointer;
-	font-size: 30px;
-
-	background-color: rgb(174, 174, 174);
-}
-
 .car {
 	width: 400px;
 	min-width: 400px;
-	margin-bottom: 90px;
+	margin-bottom: 110px;
 
+	z-index: 0;
 	position: relative;
 }
 
 .spoiler {
-	width: 100px;
+	width: 60px;
 	position: absolute;
-	top: -29px;
-	left: 37px;
+	top: 10px;
+	left: 0px;
 	transform: rotateZ(10deg);
 	visibility: hidden;
 }
 
 .wheel {
-	width: 70px;
-	top: 90px;
-	left: 36px;
+	width: 60px;
+	top: 67px;
+	left: 60px;
 
+	z-index: -1;
 	position: absolute;
 }
 
 .wheel.front {
-	top: 90px;
-	left: 282px;
+	top: 67px;
+	left: 295px;
+}
+
+.shadow-wheels {
+	top: -3px;
+
+	z-index: -2;
+	position: absolute;
+}
+
+.shadow {
+	top: 103px;
+
+	z-index: -2;
+	position: absolute;
 }
 
 .menu {
@@ -75,12 +75,21 @@ body {
 	display: flex;
 	justify-content: space-around;
 	align-items: center;
+	visibility: hidden;
 
 	background-color: #2a2a2a;
+}
+
+.menu.main {
+	visibility: visible;
 }
 
 .button {
 	width: 70px;
 	height: 70px;
+	/* background-color: chocolate; */
+	display: flex;
+	justify-content: center;
+	align-items: center;
 	cursor: pointer;
 }
