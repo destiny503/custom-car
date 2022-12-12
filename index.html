@@ -4,7 +4,7 @@
 		<meta charset="UTF-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Game</title>
+		<title>Custom car</title>
 		<link rel="stylesheet" href="./reset.css" />
 		<link rel="stylesheet" href="./style.css" />
 	</head>
@@ -13,7 +13,7 @@
 			<div class="container">
 				<div class="game">
 					<div class="car">
-						<img src="./img/priora-no-wheels.png" alt="priora" />
+						<img class="color-img" src="./img/priora.png" alt="priora" />
 						<div class="spoiler">
 							<img src="./img/spoiler1.png" alt="spoiler" />
 						</div>
@@ -24,28 +24,30 @@
 							<img class="wheel-img" src="./img/wheel1.png" alt="wheel" />
 						</div>
 						<div class="shadow-wheels">
-							<img src="./img/priora-shadow-wheels.png" alt="shadow-wheels">
+							<img src="./img/priora-shadow-wheels.png" alt="shadow-wheels" />
 						</div>
 						<div class="shadow">
-							<img src="./img/shadow.png" alt="shadow">
+							<img src="./img/shadow.png" alt="shadow" />
 						</div>
 					</div>
 				</div>
 				<div class="menu main">
 					<div class="button wheels-btn">
-						<img src="./img/wheel1.png" alt="wheels">
+						<img src="./img/wheel1.png" alt="wheels" />
 					</div>
 					<div class="button spoilers-btn">
-						<img src="./img/spoiler1.png" alt="spoilers">
+						<img src="./img/spoiler1.png" alt="spoilers" />
 					</div>
-					<div class="button"></div>
-					<div class="button"></div>
-					<div class="button"></div>
-					<div class="button"></div>
+					<div class="button colors-btn">
+						<img src="./img/colors.png" alt="colors" />
+					</div>
+					<div class="button springs-btn">
+						<img src="./img/spring.png" alt="spring" />
+					</div>
 				</div>
 				<div class="menu wheels">
 					<div class="button main-btn">
-						<img src="./img/home.png" alt="main">
+						<img src="./img/home.png" alt="main" />
 					</div>
 					<div class="button wheel1">
 						<img src="./img/wheel1.png" alt="wheel" />
@@ -59,13 +61,36 @@
 				</div>
 				<div class="menu spoilers">
 					<div class="button main-btn">
-						<img src="./img/home.png" alt="main">
+						<img src="./img/home.png" alt="main" />
 					</div>
-					<div class="button spoiler1" style="color: #FFF;">
-						CLEAR
-					</div>
+					<div class="button spoiler1">CLEAR</div>
 					<div class="button spoiler2">
-						<img src="./img/spoiler1.png" alt="spoiler">
+						<img src="./img/spoiler1.png" alt="spoiler" />
+					</div>
+				</div>
+				<div class="menu colors">
+					<div class="button main-btn">
+						<img src="./img/home.png" alt="main" />
+					</div>
+					<div class="button color1"></div>
+					<div class="button color2"></div>
+					<div class="button color3"></div>
+				</div>
+				<div class="menu springs">
+					<div class="button main-btn">
+						<img src="./img/home.png" alt="main" />
+					</div>
+					<div class="springs-slider">
+						<form action="#">
+							<input
+								type="range"
+								name="springs-name"
+								id="springs-value"
+								min="62"
+								max="80"
+								value="69"
+							/>
+						</form>
 					</div>
 				</div>
 			</div>

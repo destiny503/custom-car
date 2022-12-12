@@ -1,12 +1,17 @@
 // меню
+
 let allMenu = document.querySelectorAll(".menu");
 let mainMenu = document.querySelector(".menu.main");
 let wheelsMenu = document.querySelector(".menu.wheels");
 let spoilersMenu = document.querySelector(".menu.spoilers");
+let colorsMenu = document.querySelector(".menu.colors");
+let springsMenu = document.querySelector(".menu.springs");
 
 let mainBtns = document.querySelectorAll(".main-btn");
 let wheelsBtn = document.querySelector(".wheels-btn");
 let spoilersBtn = document.querySelector(".spoilers-btn");
+let colorsBtn = document.querySelector(".colors-btn");
+let springsBtn = document.querySelector(".springs-btn");
 
 function menuSwith() {
 	switch (this.flag) {
@@ -28,6 +33,18 @@ function menuSwith() {
 			});
 			spoilersMenu.style.visibility = "visible";
 			break;
+		case 3:
+			allMenu.forEach((i) => {
+				i.style.visibility = "hidden";
+			});
+			colorsMenu.style.visibility = "visible";
+			break;
+		case 4:
+			allMenu.forEach((i) => {
+				i.style.visibility = "hidden";
+			});
+			springsMenu.style.visibility = "visible";
+			break;
 		default:
 			alert("Ошибка переключения меню");
 	}
@@ -38,8 +55,11 @@ mainBtns.forEach((btn) => {
 });
 wheelsBtn.addEventListener("click", { handleEvent: menuSwith, flag: 1 });
 spoilersBtn.addEventListener("click", { handleEvent: menuSwith, flag: 2 });
+colorsBtn.addEventListener("click", { handleEvent: menuSwith, flag: 3 });
+springsBtn.addEventListener("click", { handleEvent: menuSwith, flag: 4 });
 
 // колёса
+
 let wheels = document.querySelectorAll(".wheel-img");
 let wheel1Btn = document.querySelector(".wheel1");
 let wheel2Btn = document.querySelector(".wheel2");
@@ -67,7 +87,8 @@ wheel1Btn.addEventListener("click", changeWheel1);
 wheel2Btn.addEventListener("click", changeWheel2);
 wheel3Btn.addEventListener("click", changeWheel3);
 
-// спойлер
+// спойлеры
+
 let spoiler = document.querySelector(".spoiler");
 let spoiler1Btn = document.querySelector(".spoiler1");
 let spoiler2Btn = document.querySelector(".spoiler2");
@@ -82,3 +103,41 @@ function changeSpoiler2() {
 
 spoiler1Btn.addEventListener("click", changeSpoiler1);
 spoiler2Btn.addEventListener("click", changeSpoiler2);
+
+// цвета
+
+let color = document.querySelector(".color-img");
+let color1Btn = document.querySelector(".color1");
+let color2Btn = document.querySelector(".color2");
+let color3Btn = document.querySelector(".color3");
+
+function changeColor1() {
+	color.setAttribute("src", "./img/priora.png");
+}
+
+function changeColor2() {
+	color.setAttribute("src", "./img/priora-yellow.png");
+}
+
+function changeColor3() {
+	color.setAttribute("src", "./img/priora-pink.png");
+}
+
+color1Btn.addEventListener("click", changeColor1);
+color2Btn.addEventListener("click", changeColor2);
+color3Btn.addEventListener("click", changeColor3);
+
+// занижение
+
+let springs = document.querySelectorAll(".wheel");
+let shadow = document.querySelector(".shadow");
+let springsSlider = document.querySelector("#springs-value");
+
+function changeSprings() {
+	for (const spring of springs) {
+		spring.style.top = this.value + "px";
+	}
+	shadow.style.top = +this.value + 36 + "px";
+}
+
+springsSlider.addEventListener("input", changeSprings);

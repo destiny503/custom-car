@@ -41,7 +41,7 @@ body {
 
 .wheel {
 	width: 60px;
-	top: 67px;
+	top: 69px;
 	left: 60px;
 
 	z-index: -1;
@@ -49,8 +49,8 @@ body {
 }
 
 .wheel.front {
-	top: 67px;
-	left: 295px;
+	top: 69px;
+	left: 296px;
 }
 
 .shadow-wheels {
@@ -61,7 +61,7 @@ body {
 }
 
 .shadow {
-	top: 103px;
+	top: 105px;
 
 	z-index: -2;
 	position: absolute;
@@ -87,9 +87,54 @@ body {
 .button {
 	width: 70px;
 	height: 70px;
-	/* background-color: chocolate; */
+	/* border: 2px solid chocolate; */
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	cursor: pointer;
+}
+
+.button.springs-btn img {
+	height: 100%;
+}
+
+.button.color1 {
+	background-color: #d2d4d5;
+}
+.button.color2 {
+	background-color: #CA6002;
+}
+.button.color3 {
+	background-color: #ea3eab;
+}
+
+.button.spoiler1 {
+	color: #ffffff;
+}
+
+#springs-value {
+	width: auto;
+	min-width: 300px;
+	appearance: none;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+}
+#springs-value::-webkit-slider-runnable-track {
+	border-radius: 20px;
+	height: 12px;
+	background-color: #1c1c1c;
+}
+#springs-value::-webkit-slider-thumb {
+	background-image: url(./img/fire.png);
+	background-size: contain;
+	background-position: center;
+	background-repeat: no-repeat;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	cursor: pointer;
+	margin-top: -25px;
+	width: 45px;
+	height: 45px;
+	-webkit-appearance: none;
 }
