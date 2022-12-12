@@ -138,11 +138,6 @@ body {
 }
 
 @media (max-height: 700px) {
-	.game {
-	}
-}
-
-@media (max-height: 700px) {
 	.car {
 		margin-bottom: 70px;
 	}
