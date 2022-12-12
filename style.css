@@ -5,16 +5,15 @@ body {
 
 .container {
 	width: 100vw;
-	height: auto;
-	background-color: darkcyan;
+	background-color: #1c1c1c;
 	overflow: hidden;
 }
 
 .game {
 	background-image: url(./img/garage.jpg);
-	height: 90vh;
+	min-height: 90vh;
 	background-size: cover;
-	background-position: center;
+	background-position: bottom;
 	background-repeat: no-repeat;
 	display: flex;
 	justify-content: center;
@@ -140,8 +139,6 @@ body {
 
 @media (max-height: 700px) {
 	.game {
-		background-size: cover;
-		background-position: bottom;
 	}
 }
 
