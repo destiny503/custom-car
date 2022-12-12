@@ -147,6 +147,9 @@ body {
 	#springs-value {
 		min-width: 200px;
 	}
+	.car {
+		margin-bottom: 110px;
+	}
 }
 
 @media (max-width: 400px) {
