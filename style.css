@@ -22,7 +22,7 @@ body {
 
 .car {
 	width: 400px;
-	margin-bottom: 110px;
+	margin-bottom: 15vh;
 
 	z-index: 0;
 	position: relative;
@@ -137,18 +137,9 @@ body {
 	-webkit-appearance: none;
 }
 
-@media (max-height: 700px) {
-	.car {
-		margin-bottom: 70px;
-	}
-}
-
 @media (max-width: 700px) {
 	#springs-value {
 		min-width: 200px;
-	}
-	.car {
-		margin-bottom: 110px;
 	}
 }
 
