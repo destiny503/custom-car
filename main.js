@@ -1,3 +1,9 @@
+// общее
+
+if (window.screen.width < 300) {
+	alert("Неподдерживаемое устройство. Складные устройства надо раскрыть😏");
+}
+
 // меню
 
 let allMenu = document.querySelectorAll(".menu");
@@ -134,10 +140,21 @@ let shadow = document.querySelector(".shadow");
 let springsSlider = document.querySelector("#springs-value");
 
 function changeSprings() {
-	for (const spring of springs) {
-		spring.style.top = this.value + "px";
+	let width = +window.screen.width;
+
+	if (width >= 400) {
+		for (const spring of springs) {
+			spring.style.top = this.value + "px";
+		}
+		shadow.style.top = +this.value + 36 + "px";
+	} else if (width >= 300) {
+		for (const spring of springs) {
+			spring.style.top = +this.value - 15 + "px";
+		}
+		shadow.style.top = +this.value + 11 + "px";
+	} else {
+		alert("Неподдерживаемое устройство. Складное надо раскрыть😏");
 	}
-	shadow.style.top = +this.value + 36 + "px";
 }
 
 springsSlider.addEventListener("input", changeSprings);

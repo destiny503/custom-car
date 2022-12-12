@@ -5,7 +5,7 @@ body {
 
 .container {
 	width: 100vw;
-	height: 100vh;
+	height: auto;
 	background-color: darkcyan;
 	overflow: hidden;
 }
@@ -23,7 +23,6 @@ body {
 
 .car {
 	width: 400px;
-	min-width: 400px;
 	margin-bottom: 110px;
 
 	z-index: 0;
@@ -102,7 +101,7 @@ body {
 	background-color: #d2d4d5;
 }
 .button.color2 {
-	background-color: #CA6002;
+	background-color: #ca6002;
 }
 .button.color3 {
 	background-color: #ea3eab;
@@ -113,12 +112,12 @@ body {
 }
 
 #springs-value {
-	width: auto;
-	min-width: 300px;
+	min-width: 500px;
 	appearance: none;
 	-webkit-appearance: none;
 	-moz-appearance: none;
 }
+
 #springs-value::-webkit-slider-runnable-track {
 	border-radius: 20px;
 	height: 12px;
@@ -137,4 +136,48 @@ body {
 	width: 45px;
 	height: 45px;
 	-webkit-appearance: none;
+}
+
+@media (max-height: 700px) {
+	.game {
+		background-size: cover;
+		background-position: bottom;
+	}
+}
+
+@media (max-height: 700px) {
+	.car {
+		margin-bottom: 70px;
+	}
+}
+
+@media (max-width: 700px) {
+	#springs-value {
+		min-width: 200px;
+	}
+}
+
+@media (max-width: 400px) {
+	#springs-value {
+		min-width: 100px;
+	}
+	.car {
+		width: 300px;
+	}
+	.wheel {
+		width: 45px;
+		top: 53px;
+		left: 46px;
+	}
+	.wheel.front {
+		left: 222px;
+		top: 53px;
+	}
+	.spoiler {
+		width: 45px;
+		top: 9px;
+	}
+	.shadow {
+		top: 81px;
+	}
 }
