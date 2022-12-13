@@ -1,8 +1,21 @@
-// общее
+// игра
 
 if (window.screen.width < 300) {
 	alert("Неподдерживаемое устройство. Складные устройства надо раскрыть😏");
 }
+
+let perfect = document.querySelector(".perfect");
+let scWheels = false;
+let scSpoilers = false;
+let scColors = false;
+let scSprings = false;
+
+let checkScore = setInterval(() => {
+	if (scWheels && scSpoilers && scColors && scSprings) {
+		perfect.style.visibility = "visible";
+		clearInterval(checkScore);
+	}
+}, 1000);
 
 // меню
 
@@ -74,18 +87,21 @@ let wheel3Btn = document.querySelector(".wheel3");
 function changeWheel1() {
 	wheels.forEach((wheel) => {
 		wheel.setAttribute("src", "./img/wheel1.png");
+		scWheels = false;
 	});
 }
 
 function changeWheel2() {
 	wheels.forEach((wheel) => {
 		wheel.setAttribute("src", "./img/wheel2.png");
+		scWheels = true;
 	});
 }
 
 function changeWheel3() {
 	wheels.forEach((wheel) => {
 		wheel.setAttribute("src", "./img/wheel3.png");
+		scWheels = true;
 	});
 }
 
@@ -95,20 +111,30 @@ wheel3Btn.addEventListener("click", changeWheel3);
 
 // спойлеры
 
-let spoiler = document.querySelector(".spoiler");
+let spoiler = document.querySelector(".spoiler-img");
 let spoiler1Btn = document.querySelector(".spoiler1");
 let spoiler2Btn = document.querySelector(".spoiler2");
+let spoiler3Btn = document.querySelector(".spoiler3");
 
 function changeSpoiler1() {
-	spoiler.style.visibility = "hidden";
+	spoiler.setAttribute("src", "./img/spoiler1.png");
+	scSpoilers = false;
 }
 
 function changeSpoiler2() {
-	spoiler.style.visibility = "visible";
+	spoiler.setAttribute("src", "./img/spoiler2.png");
+	scSpoilers = true;
+}
+
+function changeSpoiler3() {
+	spoiler.setAttribute("src", "./img/spoiler3.png");
+	spoiler.style.height = "33px";
+	scSpoilers = true;
 }
 
 spoiler1Btn.addEventListener("click", changeSpoiler1);
 spoiler2Btn.addEventListener("click", changeSpoiler2);
+spoiler3Btn.addEventListener("click", changeSpoiler3);
 
 // цвета
 
@@ -119,14 +145,17 @@ let color3Btn = document.querySelector(".color3");
 
 function changeColor1() {
 	color.setAttribute("src", "./img/priora.png");
+	scColors = false;
 }
 
 function changeColor2() {
 	color.setAttribute("src", "./img/priora-yellow.png");
+	scColors = true;
 }
 
 function changeColor3() {
 	color.setAttribute("src", "./img/priora-pink.png");
+	scColors = true;
 }
 
 color1Btn.addEventListener("click", changeColor1);
@@ -141,6 +170,10 @@ let springsSlider = document.querySelector("#springs-value");
 
 function changeSprings() {
 	let width = +window.screen.width;
+
+	if (springsSlider.value == 62 || springsSlider.value == 80) {
+		scSprings = true;
+	}
 
 	if (width >= 400) {
 		for (const spring of springs) {

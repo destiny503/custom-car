@@ -28,13 +28,33 @@ body {
 	position: relative;
 }
 
+.perfect {
+	position: absolute;
+	width: 300px;
+	transform: rotateZ(-20deg);
+	top: -250px;
+	visibility: hidden;
+
+	animation: 1s infinite alternate pulse;
+}
+
+@keyframes pulse {
+	from {
+		width: 300px;
+		opacity: 0.5;
+	}
+	to {
+		width: 350px;
+		opacity: 1;
+	}
+}
+
 .spoiler {
 	width: 60px;
 	position: absolute;
-	top: 10px;
-	left: 0px;
-	transform: rotateZ(10deg);
-	visibility: hidden;
+	top: 5px;
+	left: 5px;
+	transform: rotateZ(-3deg);
 }
 
 .wheel {
@@ -161,7 +181,7 @@ body {
 	}
 	.spoiler {
 		width: 45px;
-		top: 9px;
+		top: -5px;
 	}
 	.shadow {
 		top: 81px;
