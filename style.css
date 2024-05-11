@@ -1,189 +1,206 @@
 body {
-	background-color: #1c1c1c;
-	font-family: Arial, Helvetica, sans-serif;
+  background-color: #1c1c1c;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 .container {
-	width: 100vw;
-	background-color: #1c1c1c;
-	overflow: hidden;
+  width: 100vw;
+  background-color: #1c1c1c;
+  overflow: hidden;
 }
 
 .game {
-	background-image: url(./img/garage.jpg);
-	min-height: 90vh;
-	background-size: cover;
-	background-position: bottom;
-	background-repeat: no-repeat;
-	display: flex;
-	justify-content: center;
-	align-items: flex-end;
+  background-image: url(./img/garage.jpg);
+  min-height: 90vh;
+  background-size: cover;
+  background-position: bottom;
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
 }
 
 .car {
-	width: 400px;
-	margin-bottom: 15vh;
+  width: 400px;
+  margin-bottom: 15vh;
 
-	z-index: 0;
-	position: relative;
+  z-index: 0;
+  position: relative;
+}
+
+@keyframes drive {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(1500px);
+  }
 }
 
 .perfect {
-	position: absolute;
-	width: 300px;
-	transform: rotateZ(-20deg);
-	top: -250px;
-	visibility: hidden;
+  position: absolute;
+  width: 300px;
+  transform: rotateZ(-20deg);
+  top: -250px;
+  visibility: hidden;
 
-	animation: 1s infinite alternate pulse;
+  animation: 1s infinite alternate pulse;
 }
 
 @keyframes pulse {
-	from {
-		width: 300px;
-		opacity: 0.5;
-	}
-	to {
-		width: 350px;
-		opacity: 1;
-	}
+  from {
+    width: 300px;
+    opacity: 0.5;
+  }
+  to {
+    width: 350px;
+    opacity: 1;
+  }
 }
 
 .spoiler {
-	width: 60px;
-	position: absolute;
-	top: 5px;
-	left: 5px;
-	transform: rotateZ(-3deg);
+  width: 60px;
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  transform: rotateZ(-3deg);
 }
 
 .wheel {
-	width: 60px;
-	top: 69px;
-	left: 60px;
+  width: 60px;
+  top: 69px;
+  left: 60px;
+  z-index: -1;
+  position: absolute;
+}
 
-	z-index: -1;
-	position: absolute;
+@keyframes wheel-anim {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 .wheel.front {
-	top: 69px;
-	left: 296px;
+  top: 69px;
+  left: 296px;
 }
 
 .shadow-wheels {
-	top: -3px;
+  top: -3px;
 
-	z-index: -2;
-	position: absolute;
+  z-index: -2;
+  position: absolute;
 }
 
 .shadow {
-	top: 105px;
+  top: 105px;
 
-	z-index: -2;
-	position: absolute;
+  z-index: -2;
+  position: absolute;
 }
 
 .menu {
-	width: 100%;
-	height: 90px;
-	bottom: 0;
-	position: absolute;
-	display: flex;
-	justify-content: space-around;
-	align-items: center;
-	visibility: hidden;
+  width: 100%;
+  height: 90px;
+  bottom: 0;
+  position: absolute;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  visibility: hidden;
 
-	background-color: #2a2a2a;
+  background-color: #2a2a2a;
 }
 
 .menu.main {
-	visibility: visible;
+  visibility: visible;
 }
 
 .button {
-	width: 70px;
-	height: 70px;
-	/* border: 2px solid chocolate; */
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	cursor: pointer;
+  width: 70px;
+  height: 70px;
+  /* border: 2px solid chocolate; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
 }
 
 .button.springs-btn img {
-	height: 100%;
+  height: 100%;
 }
 
 .button.color1 {
-	background-color: #d2d4d5;
+  background-color: #d2d4d5;
 }
 .button.color2 {
-	background-color: #ca6002;
+  background-color: #ca6002;
 }
 .button.color3 {
-	background-color: #ea3eab;
+  background-color: #ea3eab;
 }
 
 .button.spoiler1 {
-	color: #ffffff;
+  color: #ffffff;
 }
 
 #springs-value {
-	min-width: 500px;
-	appearance: none;
-	-webkit-appearance: none;
-	-moz-appearance: none;
+  min-width: 500px;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
 }
 
 #springs-value::-webkit-slider-runnable-track {
-	border-radius: 20px;
-	height: 12px;
-	background-color: #1c1c1c;
+  border-radius: 20px;
+  height: 12px;
+  background-color: #1c1c1c;
 }
 #springs-value::-webkit-slider-thumb {
-	background-image: url(./img/fire.png);
-	background-size: contain;
-	background-position: center;
-	background-repeat: no-repeat;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	cursor: pointer;
-	margin-top: -25px;
-	width: 45px;
-	height: 45px;
-	-webkit-appearance: none;
+  background-image: url(./img/fire.png);
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  margin-top: -25px;
+  width: 45px;
+  height: 45px;
+  -webkit-appearance: none;
 }
 
 @media (max-width: 700px) {
-	#springs-value {
-		min-width: 200px;
-	}
+  #springs-value {
+    min-width: 200px;
+  }
 }
 
 @media (max-width: 400px) {
-	#springs-value {
-		min-width: 100px;
-	}
-	.car {
-		width: 300px;
-	}
-	.wheel {
-		width: 45px;
-		top: 53px;
-		left: 46px;
-	}
-	.wheel.front {
-		left: 222px;
-		top: 53px;
-	}
-	.spoiler {
-		width: 45px;
-		top: -5px;
-	}
-	.shadow {
-		top: 81px;
-	}
+  #springs-value {
+    min-width: 100px;
+  }
+  .car {
+    width: 300px;
+  }
+  .wheel {
+    width: 45px;
+    top: 53px;
+    left: 46px;
+  }
+  .wheel.front {
+    left: 222px;
+    top: 53px;
+  }
+  .spoiler {
+    width: 45px;
+    top: -5px;
+  }
+  .shadow {
+    top: 81px;
+  }
 }
