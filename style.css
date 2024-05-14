@@ -41,7 +41,7 @@ body {
   position: absolute;
   width: 300px;
   transform: rotateZ(-20deg);
-  top: -250px;
+  top: 25%;
   visibility: hidden;
 
   animation: 1s infinite alternate pulse;

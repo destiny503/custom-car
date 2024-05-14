@@ -13,8 +13,6 @@ let scSpoilers = false;
 let scColors = false;
 let scSprings = false;
 
-// wheel.style.transfom = "rotate(90deg)";
-
 let checkScore = setInterval(() => {
   if (scWheels && scSpoilers && scColors && scSprings) {
     perfect.style.visibility = "visible";
