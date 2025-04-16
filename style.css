@@ -142,6 +142,9 @@ body {
 .button.color3 {
   background-color: #ea3eab;
 }
+.button.color4 {
+  background-image: url(./img/usa.jpg);
+}
 
 .button.spoiler1 {
   color: #ffffff;

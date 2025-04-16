@@ -14,6 +14,7 @@ let scColors = false;
 let scSprings = false;
 
 let checkScore = setInterval(() => {
+  console.log(scWheels, scSpoilers, scColors, scSprings)
   if (scWheels && scSpoilers && scColors && scSprings) {
     perfect.style.visibility = "visible";
     clearInterval(checkScore);
@@ -121,6 +122,7 @@ let spoiler = document.querySelector(".spoiler-img");
 let spoiler1Btn = document.querySelector(".spoiler1");
 let spoiler2Btn = document.querySelector(".spoiler2");
 let spoiler3Btn = document.querySelector(".spoiler3");
+let spoiler4Btn = document.querySelector(".spoiler4");
 
 function changeSpoiler1() {
   spoiler.setAttribute("src", "./img/spoiler1.png");
@@ -138,9 +140,16 @@ function changeSpoiler3() {
   scSpoilers = true;
 }
 
+function changeSpoiler4() {
+  spoiler.setAttribute("src", "./img/spoiler-4.png");
+  spoiler.style.height = "50px";
+  scSpoilers = true;
+}
+
 spoiler1Btn.addEventListener("click", changeSpoiler1);
 spoiler2Btn.addEventListener("click", changeSpoiler2);
 spoiler3Btn.addEventListener("click", changeSpoiler3);
+spoiler4Btn.addEventListener("click", changeSpoiler4);
 
 // цвета
 
@@ -148,6 +157,7 @@ let color = document.querySelector(".color-img");
 let color1Btn = document.querySelector(".color1");
 let color2Btn = document.querySelector(".color2");
 let color3Btn = document.querySelector(".color3");
+let color4Btn = document.querySelector(".color4");
 
 function changeColor1() {
   color.setAttribute("src", "./img/priora.png");
@@ -164,9 +174,15 @@ function changeColor3() {
   scColors = true;
 }
 
+function changeColor4() {
+  color.setAttribute("src", "./img/priora-usa.png");
+  scColors = true;
+}
+
 color1Btn.addEventListener("click", changeColor1);
 color2Btn.addEventListener("click", changeColor2);
 color3Btn.addEventListener("click", changeColor3);
+color4Btn.addEventListener("click", changeColor4);
 
 // занижение
 
