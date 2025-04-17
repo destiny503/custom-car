@@ -1,20 +1,17 @@
 body {
   background-color: #1c1c1c;
   font-family: Arial, Helvetica, sans-serif;
+  overflow: hidden;
 }
 
 .container {
   width: 100vw;
   background-color: #1c1c1c;
-  overflow: hidden;
 }
 
 .game {
-  background-image: url(./img/garage.jpg);
+  background: url(./img/garage.jpg) bottom / cover no-repeat;
   min-height: 90vh;
-  background-size: cover;
-  background-position: bottom;
-  background-repeat: no-repeat;
   display: flex;
   justify-content: center;
   align-items: flex-end;
@@ -23,15 +20,11 @@ body {
 .car {
   width: 400px;
   margin-bottom: 15vh;
-
-  z-index: 0;
   position: relative;
+  z-index: 0;
 }
 
 @keyframes drive {
-  from {
-    transform: translateX(0);
-  }
   to {
     transform: translateX(1500px);
   }
@@ -39,12 +32,15 @@ body {
 
 .perfect {
   position: absolute;
+  top: 25%;
   width: 300px;
   transform: rotateZ(-20deg);
-  top: 25%;
   visibility: hidden;
-
   animation: 1s infinite alternate pulse;
+}
+
+.grow-animation {
+  animation: grow 0.5s ease-out forwards;
 }
 
 @keyframes pulse {
@@ -58,9 +54,29 @@ body {
   }
 }
 
+@keyframes grow {
+  100% {
+    transform: scale(10);
+    opacity: 0;
+  }
+}
+
+@keyframes wheel-anim {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.spoiler,
+.wheel,
+.shadow,
+.shadow-wheels {
+  position: absolute;
+  z-index: -1;
+}
+
 .spoiler {
   width: 60px;
-  position: absolute;
   top: 5px;
   left: 5px;
   transform: rotateZ(-3deg);
@@ -70,49 +86,32 @@ body {
   width: 60px;
   top: 69px;
   left: 60px;
-  z-index: -1;
-  position: absolute;
-}
-
-@keyframes wheel-anim {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
 }
 
 .wheel.front {
-  top: 69px;
   left: 296px;
 }
 
 .shadow-wheels {
   top: -3px;
-
   z-index: -2;
-  position: absolute;
 }
 
 .shadow {
   top: 105px;
-
   z-index: -2;
-  position: absolute;
 }
 
 .menu {
+  position: absolute;
+  bottom: 0;
   width: 100%;
   height: 90px;
-  bottom: 0;
-  position: absolute;
   display: flex;
   justify-content: space-around;
   align-items: center;
-  visibility: hidden;
-
   background-color: #2a2a2a;
+  visibility: hidden;
 }
 
 .menu.main {
@@ -122,7 +121,6 @@ body {
 .button {
   width: 70px;
   height: 70px;
-  /* border: 2px solid chocolate; */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -133,6 +131,7 @@ body {
   height: 100%;
 }
 
+/* Цветовые кнопки */
 .button.color1 {
   background-color: #d2d4d5;
 }
@@ -150,33 +149,29 @@ body {
   color: #ffffff;
 }
 
+/* Ползунок занижения */
 #springs-value {
   min-width: 500px;
   appearance: none;
-  -webkit-appearance: none;
-  -moz-appearance: none;
+  background: transparent;
 }
 
 #springs-value::-webkit-slider-runnable-track {
-  border-radius: 20px;
   height: 12px;
+  border-radius: 20px;
   background-color: #1c1c1c;
 }
+
 #springs-value::-webkit-slider-thumb {
-  background-image: url(./img/fire.png);
-  background-size: contain;
-  background-position: center;
-  background-repeat: no-repeat;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  cursor: pointer;
-  margin-top: -25px;
   width: 45px;
   height: 45px;
+  background: url(./img/fire.png) center / contain no-repeat;
+  margin-top: -25px;
+  cursor: pointer;
   -webkit-appearance: none;
 }
 
+/* Адаптив */
 @media (max-width: 700px) {
   #springs-value {
     min-width: 200px;
@@ -187,22 +182,26 @@ body {
   #springs-value {
     min-width: 100px;
   }
+
   .car {
     width: 300px;
   }
+
   .wheel {
     width: 45px;
     top: 53px;
     left: 46px;
   }
+
   .wheel.front {
     left: 222px;
-    top: 53px;
   }
+
   .spoiler {
     width: 45px;
     top: -5px;
   }
+
   .shadow {
     top: 81px;
   }
