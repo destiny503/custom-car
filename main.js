@@ -36,6 +36,8 @@ perfect.addEventListener('click', () => {
   wheel.style.animation = "wheel-anim 2s infinite linear";
   wheelFront.style.animation = "wheel-anim 2s infinite linear";
   car.style.animation = "5s linear forwards drive";
+
+  setTimeout(() => {confirm("Заново?") ? location.reload() : null}, 3000);
 });
 
 // меню

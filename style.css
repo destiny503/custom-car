@@ -37,6 +37,7 @@ body {
   transform: rotateZ(-20deg);
   visibility: hidden;
   animation: 1s infinite alternate pulse;
+  cursor: pointer;
 }
 
 .grow-animation {
